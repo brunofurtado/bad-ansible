@@ -11,7 +11,7 @@
   register: pgdata_dir_version
 
 - name: Ensure PostgreSQL database is initialized.
-  command: postgresql-setup initdb
+  command: postgresql-setup initdb -D {{ postgresql_data_dir }}
   when: not pgdata_dir_version.stat.exists
   become: true
 
