@@ -1,0 +1,15 @@
+---
+# tasks file for haproxy
+- name: Install HAproxy
+  yum:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ haproxy_packages }}"
+
+- name: configure haproxy
+  template:
+    src: haproxy.cfg.j2
+    dest: /etc/haproxy/haproxy.cfg
+  notify: restart haproxy service
+
+

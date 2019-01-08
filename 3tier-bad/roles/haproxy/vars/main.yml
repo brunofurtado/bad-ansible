@@ -1,0 +1,7 @@
+---
+# vars file for httpd
+haproxy_packages:
+  - httpie
+  - haproxy
+
+GUID: 6c77

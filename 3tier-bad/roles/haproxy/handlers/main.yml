@@ -1,0 +1,7 @@
+---
+# handlers file for httpd
+- name: restart haproxy service
+  service:
+    name: haproxy
+    state: restarted
+    enabled: yes
